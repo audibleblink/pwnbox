@@ -1,0 +1,20 @@
+---
+- name: Install developer tools
+  import_tasks: devtools.yml
+  tags:
+    - devtools
+
+- name: Install hacking tools
+  # import_tasks: hacktools.yml
+  tags:
+    - ptf
+
+- name: Install exploit dev tools
+  import_tasks: exploitdev.yml
+  tags:
+    - exploit
+
+- name: Install ARM exploit dev tools
+  import_tasks: arm_dev.yml
+  tags:
+    - exploit-arm

@@ -1,0 +1,36 @@
+code_dir: ~/code
+pwndbg_repo: https://github.com/pwndbg/pwndbg
+splitmind_repo: https://github.com/jerdna-regeiz/splitmind
+nvm_install_url: https://git.io/n-install
+gvm_install_url: https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer
+rbenv_repo: https://github.com/rbenv/rbenv.git
+
+arm_dev_pkgs:
+  - gdb-multiarch
+  - gcc-arm-linux-gnueabihf
+  - binutils-arm-linux-gnueabihf
+  - binutils-arm-linux-gnueabihf-dbg
+  - qemu-user
+  - qemu-user-static
+  - gcc-aarch64-linux-gnu
+  - binutils-aarch64-linux-gnu
+  - binutils-aarch64-linux-gnu-dbg
+  - build-essential
+
+exploit_dev_pkgs:
+  - gdb-multiarch
+  - tmux
+  - git
+  - python3
+  - python3-pip
+  - python3-dev
+  - libssl-dev
+  - libffi-dev
+  - build-essential
+
+exploit_pip_pkgs:
+  - pip
+  - ropper
+  - pwntools
+  - ipython
+  - ipdb

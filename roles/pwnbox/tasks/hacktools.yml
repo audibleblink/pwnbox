@@ -1,0 +1,25 @@
+---
+- name: Clone trustedsec/ptf
+  git:
+    repo: https://github.com/trustedsec/ptf.git
+    dest: /root
+  register: ptf_install
+
+- name: Configure PTF module root
+  lineinfile:
+    path: /root/ptf/config/ptf.config
+    regexp: '^BASE_INSTALL_PATH='
+    line: BASE_INSTALL_PATH=/opt
+
+- name: PTF module config
+  lineinfile:
+    path: /root/ptf/config/ptf.config
+    regexp: '^INCLUDE_ONLY_THESE_MODULES='
+    line: INCLUDE_ONLY_THESE_MODULES=modules/pivoting/dnscat2,modules/exploitation/sqlmap,modules/exploitation/metasploit,modules/exploitation/impacket,modules/exploitation/xxe-serve,modules/post-exploitation/empire,modules/post-exploitation/crackmapexec,modules/post-exploitation/powersploit,modules/post-exploitation/unicorn,modules/post-exploitation/egressbuster,modules/password-recovery/seclist,modules/password-recovery/johntheripper
+
+- name: Install PTF
+  shell: /root/ptf/ptf
+  when: ptf_install is changed
+
+- name: Install PTF Modules
+  shell: /root/ptf/ptf --update-all

@@ -1,0 +1,31 @@
+---
+- name: Clone local dotfiles
+  register: dotfiles_local
+  git:
+    repo: https://github.com/audibleblink/dotbot.local.git
+    dest: ~/.dotfiles.local
+
+- name: Install local dotfiles
+  shell: 
+    chdir: ~/.dotfiles.local
+    cmd: git checkout Linux && ./install
+  when: dotfiles_local is success
+
+- name: Clone dotfiles
+  register: dotfiles
+  git:
+    repo: https://github.com/audibleblink/dotbot.git
+    dest: ~/.dotfiles
+  ignore_errors: yes
+
+- name: Install dotfiles
+  shell: 
+    chdir: .dotfiles
+    cmd: ./install
+  register: dotdone
+  when: dotfiles is success
+  ignore_errors: yes
+
+- name: Install Vim Plugins
+  shell: vim +PlugInstall +qa
+  when: dotdone is success

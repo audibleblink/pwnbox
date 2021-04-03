@@ -1,0 +1,11 @@
+packages:
+  - curl
+  - zsh
+  - tmux
+  - tree
+  - git
+  - make
+  - ripgrep
+  - p7zip-full
+  - python3
+  - vim-gtk3

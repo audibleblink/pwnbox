@@ -1,0 +1,14 @@
+- name: Install node version manager
+  shell: 
+    cmd: "curl -sL {{ nvm_install_url }} | bash -s -- -q"
+    creates: ~/n
+
+- name: Install golang version manager
+  shell: 
+    cmd: "curl -s -S -L {{ gvm_install_url }} | bash"
+    creates: ~/.gvm
+
+- name: Install rbenv version manager
+  git:
+    repo: "{{ rbenv_repo }}"
+    dest: ~/.rbenv

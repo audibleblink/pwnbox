@@ -1,0 +1,7 @@
+---
+- name: Install base software
+  import_tasks: debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Install dotfiles
+  import_tasks: dotfiles.yml

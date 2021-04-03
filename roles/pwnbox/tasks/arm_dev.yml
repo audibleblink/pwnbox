@@ -1,0 +1,6 @@
+---
+- name: Install ARM reversing software
+  apt:
+    package: "{{ arm_dev_pkgs }}"
+    state: present
+    update_cache: yes

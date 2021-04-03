@@ -1,0 +1,5 @@
+---
+- hosts: control
+  roles:
+    - common
+    - pwnbox

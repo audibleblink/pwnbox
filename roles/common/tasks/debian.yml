@@ -1,0 +1,14 @@
+---
+- name: Install base software
+  register: base_software
+  apt:
+    package: "{{ packages }}"
+    state: present
+    update_cache: yes
+
+- name: Symlink Python3
+  when: base_software is success
+  file: 
+    src: /usr/bin/python3
+    path: /usr/bin/python
+    state: link
