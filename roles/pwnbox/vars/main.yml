@@ -34,3 +34,9 @@ exploit_pip_pkgs:
   - pwntools
   - ipython
   - ipdb
+
+  dev_optional:
+  - binwalk
+  - elfutils
+  - liblzma
+  - pkg-config

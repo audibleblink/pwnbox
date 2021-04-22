@@ -12,3 +12,9 @@
   git:
     repo: "{{ rbenv_repo }}"
     dest: ~/.rbenv
+
+- name: Install optional dev packages
+  apt:
+    package: "{{ dev_optional }}"
+    state: present
+    update_cache: yes
