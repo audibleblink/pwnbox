@@ -1,6 +1,7 @@
 ---
 - name: Install base software
   register: base_software
+  become: true
   apt:
     package: "{{ packages }}"
     state: present
@@ -8,6 +9,7 @@
 
 - name: Symlink Python3
   when: base_software is success
+  become: true
   file: 
     src: /usr/bin/python3
     path: /usr/bin/python

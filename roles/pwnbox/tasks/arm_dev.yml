@@ -1,5 +1,6 @@
 ---
 - name: Install ARM reversing software
+  become: true
   apt:
     package: "{{ arm_dev_pkgs }}"
     state: present
