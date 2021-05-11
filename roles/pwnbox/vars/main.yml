@@ -35,7 +35,7 @@ exploit_pip_pkgs:
   - ipython
   - ipdb
 
-  dev_optional:
+dev_optional:
   - binwalk
   - elfutils
   - liblzma
