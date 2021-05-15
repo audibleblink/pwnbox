@@ -24,10 +24,8 @@
   shell: 
     chdir: ~/.dotfiles
     cmd: ./install
-  register: dotdone
   when: dotfiles is success
   ignore_errors: yes
 
 - name: Install Vim Plugins
   shell: vim +PlugInstall +qa
-  when: dotdone is success
