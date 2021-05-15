@@ -22,7 +22,7 @@
 
 - name: Install dotfiles
   shell: 
-    chdir: .dotfiles
+    chdir: ~/.dotfiles
     cmd: ./install
   register: dotdone
   when: dotfiles is success
