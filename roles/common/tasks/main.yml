@@ -1,7 +1,11 @@
 ---
-- name: Install base software
+- name: Install base software on Debian
   import_tasks: debian.yml
   when: ansible_os_family == 'Debian'
+
+- name: Install base software on Parrot
+  import_tasks: debian.yml
+  when: ansible_os_family == 'Parrot OS'
 
 - name: Install dotfiles
   import_tasks: dotfiles.yml
