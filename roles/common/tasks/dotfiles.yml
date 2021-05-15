@@ -4,6 +4,7 @@
   git:
     repo: https://github.com/audibleblink/dotbot.local.git
     dest: ~/.dotfiles.local
+    recurse: false
 
 - name: Install local dotfiles
   shell: 
@@ -16,6 +17,7 @@
   git:
     repo: https://github.com/audibleblink/dotbot.git
     dest: ~/.dotfiles
+    recurse: false
   ignore_errors: yes
 
 - name: Install dotfiles
