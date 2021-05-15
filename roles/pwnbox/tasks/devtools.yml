@@ -2,6 +2,7 @@
   shell: 
     cmd: "curl -sL {{ nvm_install_url }} | bash -s -- -q"
     creates: ~/n
+  ignore_errors: yes
 
 - name: Install golang version manager
   shell: 
@@ -14,6 +15,7 @@
     dest: ~/.rbenv
 
 - name: Install optional dev packages
+  become: yes
   apt:
     package: "{{ dev_optional }}"
     state: present

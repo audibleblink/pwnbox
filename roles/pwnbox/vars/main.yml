@@ -38,5 +38,5 @@ exploit_pip_pkgs:
 dev_optional:
   - binwalk
   - elfutils
-  - liblzma
+  - liblzma5
   - pkg-config
