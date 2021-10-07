@@ -1,2 +1,16 @@
 [control]
 localhost ansible_connection=local
+
+[clusterctrl:children]
+clusterctrl_server
+clusterctrl_nodes
+
+[clusterctrl_server]
+hammond
+
+[clusterctrl_nodes]
+oneil
+carter
+# tealc
+danieljackson
+

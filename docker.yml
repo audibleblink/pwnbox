@@ -1,0 +1,4 @@
+---
+- hosts: clusterctrl_nodes
+  roles:
+    - docker

@@ -1,0 +1,8 @@
+---
+- name: Upgrade Software
+  become: true
+  apt:
+    update_cache: yes
+    upgrade: yes
+    autoclean: yes
+    autoremove: yes

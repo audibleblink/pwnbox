@@ -1,0 +1,38 @@
+---
+- name: Install aptitude using apt
+  become: true
+  apt: 
+    package: aptitude 
+    state: present 
+    update_cache: yes 
+    force_apt_get: yes
+
+- name: Install Docker Prereqs
+  become: true
+  apt:
+    package: "{{ packages }}"
+    state: present
+
+- name: Add Docker GPG apt Key
+  become: true
+  apt_key:
+    url: "{{ gpg_key_url }}"
+    state: present
+
+- name: Add Docker Repository
+  become: true
+  tags:
+    - repo
+  apt_repository:
+    repo: "deb [arch={{arch}} signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] {{ repo_url }}  {{ release }} stable"
+    state: present
+
+- name: Update apt and install docker-ce
+  become: true
+  tags:
+    - repo
+  apt: 
+    package: "{{ docker_packages }}"
+    state: latest
+    update_cache: yes 
+

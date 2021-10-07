@@ -1,0 +1,20 @@
+- name: Linux upgrade all by apt-get
+  hosts: all
+  tasks:
+    - name: Report system
+      debug:
+        var: ansible_facts['os_family'], ansible_facts['distribution']
+
+    - name: apt-get update && upgrade
+      apt:
+        update_cache: yes
+        upgrade: yes
+        autoremove: yes
+        autoclean: yes
+        force_apt_get: yes
+      become: yes
+      register: result
+
+    - name: Report result
+      debug:
+        var: result

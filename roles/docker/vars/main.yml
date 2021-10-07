@@ -1,0 +1,17 @@
+packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+
+gpg_key_url: https://download.docker.com/linux/ubuntu/gpg
+
+docker_packages:
+  - docker-ce 
+  - docker-ce-cli 
+  - containerd.io
+
+repo_url: https://download.docker.com/linux/debian
+release: buster
+arch: armhf
