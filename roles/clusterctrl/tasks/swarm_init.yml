@@ -1,0 +1,4 @@
+---
+
+- name: Create Swarm
+  import_tasks: swarm_init.yml

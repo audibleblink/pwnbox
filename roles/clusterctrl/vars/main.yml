@@ -5,13 +5,14 @@ packages:
   - gnupg
   - lsb-release
 
-gpg_key_url: https://download.docker.com/linux/ubuntu/gpg
+gpg_key_url: https://download.docker.com/linux/raspbian/gpg
+gpg_key_out: /usr/share/keyrings/docker-archive-keyring.gpg
 
 docker_packages:
   - docker-ce 
   - docker-ce-cli 
   - containerd.io
 
-repo_url: https://download.docker.com/linux/debian
+repo_url: https://download.docker.com/linux/raspbian
 release: buster
 arch: armhf

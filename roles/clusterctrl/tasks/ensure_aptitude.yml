@@ -1,0 +1,11 @@
+---
+
+- name: Install aptitude using apt
+  become: true
+  apt: 
+    package: aptitude 
+    state: present 
+    update_cache: yes 
+    force_apt_get: yes
+
+

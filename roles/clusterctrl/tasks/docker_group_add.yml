@@ -1,5 +1,7 @@
 ---
+
 - name: Add pi to docker group
+  become: true
   user:
     name: pi
     append: yes

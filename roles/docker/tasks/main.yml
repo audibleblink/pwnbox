@@ -1,9 +1,0 @@
----
-- name: Install docker on debian
-  import_tasks: install.yml
-  when: ansible_os_family == 'debian'
-
-- name: Add user to docker group
-  import_tasks: usermod.yml
-  when: ansible_os_family == 'debian'
-

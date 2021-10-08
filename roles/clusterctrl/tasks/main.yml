@@ -1,0 +1,22 @@
+---
+
+- name: Apt Upgrade
+  import_tasks: apt_upgrade.yml
+
+- name: Ensure aptitude
+  import_tasks: ensure_aptitude.yml
+
+- name: Enable Container features on RPi
+  import_tasks: enable_containers.yml
+
+- name: Install docker on debian
+  import_tasks: install_docker.yml
+
+- name: Add user to docker group
+  import_tasks: docker_group_add.yml
+
+- name: Create Swarm
+  import_tasks: swarm_init.yml
+  tags:
+    - never
+    - swarm_init
